@@ -17,7 +17,9 @@ jobs:
           python-version: '3.11'
 
       - name: Run bot
-        run: python bot.py
+        run: |
+              pip install tweepy
+              python bot.py
         env:
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
